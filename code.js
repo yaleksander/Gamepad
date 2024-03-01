@@ -150,7 +150,7 @@ setInterval(function ()
 	}
 }, 16);
 
-document.addEventListener("gamepadconnected", (e) =>
+window.addEventListener("gamepadconnected", (e) =>
 {
 	RPM.Datas.Keyboards.controls["Action"     ].sc.push(["A"]);
 	RPM.Datas.Keyboards.controls["Cancel"     ].sc.push(["B"]);
