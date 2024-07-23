@@ -97,12 +97,28 @@ setInterval(function ()
 						const x = RPM.System.DynamicValue.createNumber(lh);
 						const y = RPM.System.DynamicValue.createNumber(lv);
 						RPM.Core.Game.current.hero.receiveEvent(null, false, leftStickEventID, [null, id, x, y], RPM.Core.Game.current.heroStates);
+						leftStickNeutral = false;
+					}
+					else if (!leftStickNeutral)
+					{
+						const x = RPM.System.DynamicValue.createNumber(0);
+						const y = RPM.System.DynamicValue.createNumber(0);
+						RPM.Core.Game.current.hero.receiveEvent(null, false, leftStickEventID, [null, id, x, y], RPM.Core.Game.current.heroStates);
+						leftStickNeutral = true;
 					}
 					if (Math.sqrt(rh * rh + rv * rv) > d)
 					{
 						const x = RPM.System.DynamicValue.createNumber(rh);
 						const y = RPM.System.DynamicValue.createNumber(rv);
 						RPM.Core.Game.current.hero.receiveEvent(null, false, rightStickEventID, [null, id, x, y], RPM.Core.Game.current.heroStates);
+						rightStickNeutral = false;
+					}
+					else if (!rightStickNeutral)
+					{
+						const x = RPM.System.DynamicValue.createNumber(0);
+						const y = RPM.System.DynamicValue.createNumber(0);
+						RPM.Core.Game.current.hero.receiveEvent(null, false, rightStickEventID, [null, id, x, y], RPM.Core.Game.current.heroStates);
+						rightStickNeutral = true;
 					}
 				}
 				if (lv < -0.5 || rv < -0.5)
