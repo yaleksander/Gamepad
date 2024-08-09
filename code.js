@@ -8,6 +8,8 @@ const rightStickEventID = RPM.Manager.Plugins.getParameter(pluginName, "Right st
 const deadzone = RPM.Manager.Plugins.getParameter(pluginName, "Deadzone variable ID");;
 const repeatDelay = 30;
 
+var leftStickNeutral = true;
+var rightStickNeutral = true;
 var keysList = ["A", "B", "X", "Y", "LB", "RB", "LT", "RT", "Back", "Start", "L3", "R3", "Up", "Down", "Left", "Right", "Home"];
 
 // https://w3c.github.io/gamepad/#remapping
